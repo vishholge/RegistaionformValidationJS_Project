@@ -34,7 +34,7 @@ function isValidate(){
         document.getElementById("emailValid").style.display = "block";
         document.getElementById("emailInvalid").style.display = "none";
     }
-    if(phone  == ''|| phone.length < 10 || phone.length >10){
+    if(phone  == ''|| phone.length != 10 || Number(phone[0]) <6 ){
         document.getElementById("phoneInvalid").style.display = "block"
         document.getElementById("phoneValid").style.display = "none"
 
