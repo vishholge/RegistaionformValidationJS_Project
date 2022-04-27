@@ -5,7 +5,7 @@ function isValidate(){
     let phone = document.getElementById("phoneno").value;
     let state = document.getElementById("state").value;
     let zipcode = document.getElementById("zipcode").value;
-    let invalidCheck = document.getElementById("invalidCheck").value;
+    let invalidCheck = document.getElementById("invalidCheck").checked;
 
     if(firstName == ''){
         document.getElementById("firstNameInvalid").style.display = "block"
@@ -61,10 +61,52 @@ function isValidate(){
         document.getElementById("zipValid").style.display = "block";
         document.getElementById("zipInvalid").style.display = "none";
     }
-    if(  invalidCheck == ''  ){
-        document.getElementsByClassName("Invalid-feedback").style.display = "block"
+    if(  invalidCheck ==false  ){
+        document.getElementById("tncCondition").style.display = "block";
         
 
     }
+    else{
+        document.getElementById("tncCondition").style.display = "none";
+    }
     
 }
+function isValidFirstName(){
+    let firstName = document.getElementById("firstname").value;
+    if(firstName == '' || firstName.includes(" ")){
+        document.getElementById("firstNameInvalid").style.display = "block";
+    }
+    else{
+        document.getElementById("firstNameInvalid").style.display = "none";
+    }
+
+}
+function isValidMail(){
+    let email = document.getElementById("email").value;
+    if(email == '' || !email.includes('@') || !email.includes('.') ||email.startsWith('@') || email.indexOf("@")> email.indexOf(".")){
+       document.getElementById("emailInvalid").style.display = "block";
+    }
+    else{
+        document.getElementById("emailInvalid").style.display = "none";
+    }
+}
+function isValidPhone(){
+    let phone = document.getElementById("phoneno").value;
+    if(phone  == ''|| phone.length != 10 || Number(phone[0]) <6 ){
+        document.getElementById("phoneInvalid").style.display = "block";
+
+    }
+    else{
+        document.getElementById("phoneInvalid").style.display = "none";
+    }
+}
+function isValidZip(){
+    let zipcode = document.getElementById("zipcode").value;
+    if(zipcode  == ''|| zipcode.length < 6 ){
+        document.getElementById("zipInvalid").style.display = "block";
+    }else{
+
+        document.getElementById("zipInvalid").style.display = "none";
+    }
+}
+
