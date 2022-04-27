@@ -81,6 +81,16 @@ function isValidFirstName(){
     }
 
 }
+function isValidLastName(){
+    let firstName = document.getElementById("lastname").value;
+    if(firstName == '' || firstName.includes(" ")){
+        document.getElementById("lastNameInvalid").style.display = "block";
+    }
+    else{
+        document.getElementById("lastNameInvalid").style.display = "none";
+    }
+
+}
 function isValidMail(){
     let email = document.getElementById("email").value;
     if(email == '' || !email.includes('@') || !email.includes('.') ||email.startsWith('@') || email.indexOf("@")> email.indexOf(".")){
@@ -107,6 +117,19 @@ function isValidZip(){
     }else{
 
         document.getElementById("zipInvalid").style.display = "none";
+    }
+}
+function isSelected(){
+    let val = document.getElementById("state");
+    let state = val.options[select.selectedIndex].value
+    
+    if(state== ""){
+       document.getElementById("stateInvalid").style.display = "block";
+       console.log("vishwnath");
+    }else{
+
+        document.getElementById("stateInvalid").style.display = "none";
+        console.log("holge");
     }
 }
 
